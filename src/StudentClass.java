@@ -1,36 +1,32 @@
 import java.util.Scanner;
 
-class AreaCalculator {
+class Student {
+    String name;
+    int rollNo;
 
-    float calculateArea(float radius) {
-        return (float)(Math.PI * radius * radius);
+    Student(String name, int rollNo) {
+        this.name = name;
+        this.rollNo = rollNo;
     }
 
-    float calculateArea(float length, float breadth) {
-        return length * breadth;
-    }
-
-    double calculateArea(double base, double height) {
-        return 0.5 * base * height;
+    void display(int studentNumber) {
+        System.out.println("Student " + studentNumber + " details: Name: " + name + " Roll: " + rollNo);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        AreaCalculator ac = new AreaCalculator();
-        float radius = sc.nextFloat();
-        float length = sc.nextFloat();
-        float breadth = sc.nextFloat();
-        double base = sc.nextDouble();
-        double height = sc.nextDouble();
 
-        float circleArea = ac.calculateArea(radius);
-        float rectangleArea = ac.calculateArea(length, breadth);
-        double triangleArea = ac.calculateArea(base, height);
+        String name1 = sc.nextLine();
+        int roll1 = sc.nextInt();
+        sc.nextLine(); 
+        String name2 = sc.nextLine();
+        int roll2 = sc.nextInt();
 
-      
-        System.out.printf("%.2f\n", circleArea);
-        System.out.printf("%.2f\n", rectangleArea);
-        System.out.printf("%.2f\n", triangleArea);
+        Student s1 = new Student(name1, roll1);
+        Student s2 = new Student(name2, roll2);
+
+        s1.display(1);
+        s2.display(2);
 
         sc.close();
     }
