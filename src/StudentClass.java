@@ -1,25 +1,37 @@
 import java.util.Scanner;
 
-class Student {
-   
+class AreaCalculator {
 
-    // TODO: Create a parameterized constructor Student(String name, int rollNo)
-    
-    // TODO: Create a method or use direct access to print details in the required format
-}
+    float calculateArea(float radius) {
+        return (float)(Math.PI * radius * radius);
+    }
 
-public class StudentClass {
-    
-        
-        // TODO: Read name1
-        // TODO: Read rollNo1
-        // Hint: Handle the newline consumption if using nextLine() after nextInt()
-        
-        // TODO: Read name2
-        // TODO: Read rollNo2
-        
-        // TODO: Create two Student objects
-        
-        // TODO: Print details for both students
-    
+    float calculateArea(float length, float breadth) {
+        return length * breadth;
+    }
+
+    double calculateArea(double base, double height) {
+        return 0.5 * base * height;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        AreaCalculator ac = new AreaCalculator();
+        float radius = sc.nextFloat();
+        float length = sc.nextFloat();
+        float breadth = sc.nextFloat();
+        double base = sc.nextDouble();
+        double height = sc.nextDouble();
+
+        float circleArea = ac.calculateArea(radius);
+        float rectangleArea = ac.calculateArea(length, breadth);
+        double triangleArea = ac.calculateArea(base, height);
+
+      
+        System.out.printf("%.2f\n", circleArea);
+        System.out.printf("%.2f\n", rectangleArea);
+        System.out.printf("%.2f\n", triangleArea);
+
+        sc.close();
+    }
 }
